@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Generator</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      padding: 20px;
+    }
+
+    #qrcode {
+      margin: 15px auto;
+      display: block;
+    }
+
+    input {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<input id="text" type="text" value="https://mrrobot071.github.io/0" /><br />
+<div id="qrcode"></div>
+
+<script>
+  var qrcode = new QRCode("qrcode");
+
+  function makeCode() {
+    var elText = document.getElementById("text");
+
+    if (!elText.value) {
+      alert("Input a text");
+      elText.focus();
+      return;
+    }
+
+    qrcode.makeCode(elText.value);
+  }
+
+  makeCode();
+
+  $("#text")
+    .on("blur", function () {
+      makeCode();
+    })
+    .on("keydown", function (e) {
+      if (e.keyCode == 13) {
+        makeCode();
+      }
+    });
+</script>
+
+</body>
+  </html>
