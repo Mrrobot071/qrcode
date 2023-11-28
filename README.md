@@ -1,1 +1,1 @@
-mrrobot071.github.io
+https://mrrobot071.github.io/qrcode
