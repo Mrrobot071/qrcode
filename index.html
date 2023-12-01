@@ -7,62 +7,74 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
   <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f4f4f4;
-      text-align: center;
-      padding: 20px;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 
-    #qrcode {
-      margin: 15px auto;
-      display: block;
-    }
+#qrcode {
+  margin: 20px auto; /* Increased margin for better spacing */
+  display: block;
+  max-width: 100%; /* Ensure QR code doesn't exceed its container */
+}
 
-    input {
-      width: 55%;
-      padding: 12px; /* Adjusted height of the input */
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 14px;
-    }
+input {
+  width: 70%; /* Adjusted width for better readability */
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px; /* Increased font size for better visibility */
+}
 
-    .menu-button {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      background-color: white;
-      padding: 10px;
-      border: 1px solid #000000;
-      border-radius: 50%;
-      cursor: pointer;
-      z-index: 9999;
-    }
+.menu-button {
+  position: fixed;
+  top: 15px; /* Adjusted top position for better visibility */
+  right: 15px; /* Adjusted right position for better visibility */
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 9999;
+}
 
-    .menu-options {
-      display: none;
-      position: absolute;
-      top: 40px;
-      right: 10px;
-      background-color: silver;
-      border: 1px solid #000000;
-      padding: 10px;
-      z-index: 9999;
-    }
+.menu-options {
+  display: none;
+  position: absolute;
+  top: 60px; /* Adjusted top position for better spacing */
+  right: 15px;
+  background-color: silver;
+  border: 1px solid #000000;
+  padding: 10px;
+  z-index: 9999;
+}
 
-    .menu-options a {
-      display: block;
-      margin-bottom: 10px;
-      text-decoration: none;
-      z-index: 9999;
-    }
+.menu-options a {
+  display: block;
+  margin-bottom: 10px;
+  text-decoration: none;
+  z-index: 9999;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    width: 40%;
+  }
+
+  #qrcode,
+  input {
+    width: 60%; /* Adjusted width for larger screens */
+  }
+}
   </style>
 </head>
 <body>
